@@ -4,8 +4,8 @@ in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Maddie Sorensen.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -36,6 +36,10 @@ def run_test_rectangle_of_stars():
 
 
 def rectangle_of_stars(r, c):
+    for i in range(r):
+        for j in range(c):
+            print('*',end='')
+        print()
     """
     Prints a rectangle of stars (asterisks), with r rows and c columns.
     For example, when r = 3 and c = 5:
@@ -45,7 +49,7 @@ def rectangle_of_stars(r, c):
     Preconditions:  r and c are non-negative integers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     #  *** Unless your instructor directs you otherwise,
@@ -85,6 +89,12 @@ def run_test_triangle_of_stars():
 
 
 def triangle_of_stars(r):
+    for i in range(r):
+        for j in range(1,i+1):
+            print('*', end='')
+        print()
+
+
     """
     Prints a triangle of stars (asterisks), with r rows.
       -- The first row is 1 star,
@@ -99,7 +109,7 @@ def triangle_of_stars(r):
     Precondition:  r is a non-negative integer.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     #  *** Unless your instructor directs you otherwise,
@@ -140,6 +150,11 @@ def run_test_decreasing_exclamation_marks():
 
 
 def decreasing_exclamation_marks(m, n):
+    for i in range(m-n+1):
+        for j in range(m-n*i):
+            print('!', end='')
+        print()
+
     """
     Prints exclamation marks:  m on the first row,
     m-1 on the next row, m-2 on the next, etc, until n on the last row.
@@ -151,7 +166,7 @@ def decreasing_exclamation_marks(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -182,6 +197,14 @@ def run_test_alternating_brackets():
 
 
 def alternating_brackets(m, n):
+    for i in range(m - n + 1):
+        for j in range(m-i):
+            if j%2==0:
+                print('[', end='')
+            else:
+                print(']',end='')
+
+        print()
     """
     Prints alternating left/right square brackets:  m on the first row,
     m-1 on the next row, m-2 on the next, etc, until n on the last row.
@@ -193,7 +216,7 @@ def alternating_brackets(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -224,6 +247,10 @@ def run_test_triangle_same_number_in_each_row():
 
 
 def triangle_same_number_in_each_row(r):
+    for i in range(r):
+        for j in range(i+1):
+            print('{}'.format(i+1), end='')
+        print()
     """
     Prints a triangle of numbers, with r rows.
     The first row is 1, the 2nd is 22, the 3rd is 333, etc.
@@ -236,7 +263,7 @@ def triangle_same_number_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -267,6 +294,10 @@ def run_test_triangle_all_numbers_in_each_row():
 
 
 def triangle_all_numbers_in_each_row(r):
+    for i in range(r):
+        for j in range(i+1):
+            print('{}'.format(j+1), end='')
+        print()
     """
     Prints a triangle of numbers, with r rows.
     The first row is 1, the 2nd is 12, the 3rd is 123, etc.
@@ -279,7 +310,7 @@ def triangle_all_numbers_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
