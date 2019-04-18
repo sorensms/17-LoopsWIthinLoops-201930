@@ -290,7 +290,7 @@ def print_characters_slanted(sequence_of_strings):
     then this function prints:
        h
         i
-       b
+       b 
         y
          e
        a
