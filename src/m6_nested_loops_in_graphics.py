@@ -4,8 +4,8 @@ in the context of TWO-DIMENSIONAL GRAPHICS.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and MAddie Sorensen.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -56,6 +56,36 @@ def run_test_draw_L():
 
 
 def draw_L(window, circle, r, c):
+    original_x = circle.center.x
+    original_y = circle.center.y
+    radius = circle.radius
+
+    x = original_x
+    y = original_y
+    for i in range(r):
+        for j in range(3):
+            new_circle = rg.Circle(rg.Point(x, y), radius)
+            new_circle.attach_to(window)
+            new_circle.fill_color = circle.fill_color
+            window.render(0.1)
+
+            x = x + (2 * radius)
+
+        y = y + 2 * radius
+        x = original_x
+
+    for i in range(3):
+        for j in range(c+3):
+            new_circle = rg.Circle(rg.Point(x, y), radius)
+            new_circle.attach_to(window)
+            new_circle.fill_color=circle.fill_color
+            window.render(0.1)
+
+            x = x + (2 * radius)
+
+        y = y + 2 * radius
+        x = original_x
+
     """
     See   L.pdf   in this project for pictures that may
     help you better understand the following specification:
@@ -81,7 +111,7 @@ def draw_L(window, circle, r, c):
     and m and n are small, positive integers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
@@ -125,7 +155,22 @@ def draw_wall_on_right(rectangle, n, window):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    original_x = rectangle.center.x
+    original_y = rectangle.center.y
+    height = rectangle.height
 
+    x = original_x
+    y = original_y
+    for j in range(n):  # Loop through the rows
+        for _ in range(j + 1):  # Loop through the columns
+            new_rectangle = rg.Rectangle(rg.Point(x, y), height)
+            new_rectangle.attach_to(window.initial_canvas)
+            window.render(0.1)
+
+            x = x + (height)  # Move x to the right, for next circle
+
+        y = y + height  # Move y down, for the next row of circles
+        x = original_x  # Reset x to the left-edge, for the next row
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
